@@ -96,15 +96,15 @@ void deletePoint3D(point3D*p)
 
 void print2D(point2D *p)
 {
-	printf("x = %d\n", p->getX);
-	printf("y = %d\n", p->getY);
+	printf("x = %d\n", p->getX(p));
+	printf("y = %d\n", p->getY(p));
 }
 
 void print3D(point3D *p)
 {
-	printf("x = %d\n", p->getX);
-	printf("y = %d\n", p->getY);
-	printf("z = %d\n", p->getZ);
+	printf("x = %d\n", p->getX(p));
+	printf("y = %d\n", p->getY(p));
+	printf("z = %d\n", p->getZ(p));
 }
 
 #define printPoint(X) _Generic((X), \
@@ -139,8 +139,8 @@ int main() {
 	printf("p2y = %d\n", p2y);
 	printf("p2z = %d\n", p2z);
 
-	//printPoint(point2d);
-	//printPoint(point3d);
+	printPoint(point2d);
+	printPoint(point3d);
 
 	deletePoint2D(point2d);
 	deletePoint2D(point3d);
